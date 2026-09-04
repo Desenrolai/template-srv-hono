@@ -1,5 +1,12 @@
 node_modules/
 dist/
+coverage/
+
 .env
 .env.local
+.env*.local
+
+*.js.map
 *.tsbuildinfo
+
+.DS_Store
