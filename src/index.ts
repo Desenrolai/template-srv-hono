@@ -6,7 +6,9 @@ export const app = new Hono();
 app.get("/health", (c) => c.json({ status: "ok" }));
 
 export function startServer(): void {
-  serve({ fetch: app.fetch, port: 3000 }, (info) => {
+  const port = Number.parseInt(process.env.PORT ?? "3000", 10);
+
+  serve({ fetch: app.fetch, port }, (info) => {
     console.log("Server running on port " + String(info.port));
   });
 }
